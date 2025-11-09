@@ -1,0 +1,139 @@
+:root {
+  --bg: #f7fafc;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --radius: 12px;
+  --max-width: 980px;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  background: var(--bg);
+  color: #111827;
+}
+
+.wrap {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column; /* 🔹 Kartları alt alta dizer */
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px; /* 🔹 Kartlar arasında boşluk */
+  padding: 32px 16px;
+  box-sizing: border-box;
+}
+
+
+.card {
+  width: 100%;
+  max-width: var(--max-width);
+  background: var(--card);
+  box-shadow: 0 6px 18px rgba(15,23,42,0.06);
+  padding: 24px;
+  border-radius: var(--radius);
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin: 0 0 16px;
+  text-align: center;
+}
+
+.table-wrap {
+  width: 100%;
+  overflow: hidden; /* 🔥 Yana kaydırma tamamen kapalı */
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%; /* 🔥 Tam genişlik */
+  table-layout: fixed; /* Sütunlar esnek ama sığar */
+  word-wrap: break-word;
+}
+
+thead tr {
+  background: #2b4c7e;
+  color: #fff;
+}
+
+thead th {
+  border: 1px solid #111827;
+  padding: 10px 8px;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+td {
+  padding: 10px 8px;
+  text-align: left;
+  font-size: 0.9rem;
+  vertical-align: top;
+  word-break: break-word;
+}
+
+
+
+@media (min-width: 767px) {
+  .mobiliptal {
+    display: none;
+  }
+}
+
+/* 🔹 Mobil görünüm */
+@media (max-width: 768px) {
+  table {
+    border: none;
+    table-layout: auto;
+  }
+
+  thead {
+    display: none; /* Başlık gizleniyor */
+  }
+
+  tbody tr {
+    display: block;
+    background: #fff;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    padding: 10px 0;
+  }
+
+  tbody td {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 14px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  tbody td:last-child {
+    border-bottom: none;
+  }
+
+  tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--muted);
+    flex: 1;
+  }
+
+  tbody td span {
+    flex: 1;
+    text-align: right;
+    font-weight: 500;
+  }
+}
+
+.samsunglogo {
+  text-align: center;
+}
+.samsunglogoblok {
+background-color: rgb(255, 255, 255);
+}
